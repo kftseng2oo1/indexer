@@ -2117,21 +2117,30 @@ function clearBulk() {
 const BATCH_SIZE = 1;
 
 async function indexOne(c, idx, total) {
-  const res = await fetch(workerUrl() + '/rag/index', {
-    method: 'POST',
-    headers: { 'Content-Type':'application/json', 'X-Admin-Token': adminToken() },
-    body: JSON.stringify({
-      text:            c.text,
-      source:          c.source,
-      chapter:         c.chapter         || '',
-      tags:            c.tags            || [],
-      tradition:       c.tradition       || 'general',
-      translation:     c.translation     || '',
-      concept_essence: c.concept_essence || '',
-    }),
-  });
-  const d = await res.json();
-  if (!res.ok) throw new Error(d.error || 'HTTP ' + res.status);
+  let res, d;
+  try {
+    res = await fetch(workerUrl() + '/rag/index', {
+      method: 'POST',
+      headers: { 'Content-Type':'application/json', 'X-Admin-Token': adminToken() },
+      body: JSON.stringify({
+        text:            c.text,
+        source:          c.source,
+        chapter:         c.chapter         || '',
+        tags:            c.tags            || [],
+        tradition:       c.tradition       || 'general',
+        translation:     c.translation     || '',
+        concept_essence: c.concept_essence || '',
+      }),
+    });
+  } catch(fetchErr) {
+    throw new Error('fetch 網路錯誤：' + fetchErr.message);
+  }
+  try {
+    d = await res.json();
+  } catch(jsonErr) {
+    throw new Error('HTTP ' + res.status + ' / JSON 解析失敗：' + jsonErr.message);
+  }
+  if (!res.ok) throw new Error('HTTP ' + res.status + '：' + (d.error || JSON.stringify(d)));
   log(`[${idx}/${total}] ✓ 《${c.source}》${c.chapter||''}`, 'ok');
   return true;
 }
