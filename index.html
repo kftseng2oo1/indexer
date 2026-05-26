@@ -2114,7 +2114,7 @@ function clearBulk() {
 }
 
 // ── 批次建檔（並行 3 筆，縮短建檔時間）──
-const BATCH_SIZE = 3;
+const BATCH_SIZE = 1;
 
 async function indexOne(c, idx, total) {
   const res = await fetch(workerUrl() + '/rag/index', {
@@ -2142,7 +2142,7 @@ async function indexBulk() {
   btn.disabled = true;
   setProgress(0, true);
   const total = parsedChunks.length;
-  log(`開始批次建檔 ${total} 筆（每批 ${BATCH_SIZE} 筆並行）…`, 'info');
+  log(`開始批次建檔 ${total} 筆（逐筆串行，間隔 800ms）…`, 'info');
 
   let ok = 0, fail = 0, done = 0;
   // 分批並行：每批 BATCH_SIZE 筆同時送出
@@ -2161,7 +2161,7 @@ async function indexBulk() {
     });
     setProgress(Math.round(done / total * 100));
     // 批次間隔，避免 rate limit
-    if (i + BATCH_SIZE < total) await sleep(400);
+    if (i + BATCH_SIZE < total) await sleep(800);
   }
 
   log(`批次完成：成功 ${ok} 筆，失敗 ${fail} 筆`, fail ? 'warn' : 'ok');
