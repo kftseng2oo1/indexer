@@ -2,7 +2,7 @@
 // Cache key: 文本注入-v1
 // Strategy: Stale-While-Revalidate (HTML) + Cache-First (assets)
 
-const CACHE_NAME = '文本注入-v1';
+const CACHE_NAME = '文本注入-v2';
 const PRECACHE_URLS = [
     "/indexer/index.html",
     "/indexer/sw.js",
