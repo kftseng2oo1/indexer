@@ -143,6 +143,9 @@ select option{background:#1a1710;}
       <span class="corpus-chip" data-corpus="nikaya"       onclick="loadCorpus(this,'nikaya')">尼柯耶選段</span>
       <div style="font-size:10px;color:var(--text3);letter-spacing:1px;margin:8px 0 6px;">── 禪宗 ──</div>
       <span class="corpus-chip" data-corpus="platform"     onclick="loadCorpus(this,'platform')">六祖壇經</span>
+      <span class="corpus-chip" data-corpus="platform_more" onclick="loadCorpus(this,'platform_more')">六祖壇經·續</span>
+      <span class="corpus-chip" data-corpus="yuanjue"      onclick="loadCorpus(this,'yuanjue')">圓覺經</span>
+      <span class="corpus-chip" data-corpus="mahayana_more" onclick="loadCorpus(this,'mahayana_more')">大智度論·涅槃經</span>
       <span class="corpus-chip" data-corpus="zen_koan"     onclick="loadCorpus(this,'zen_koan')">公案·語錄</span>
       <div style="font-size:10px;color:var(--text3);letter-spacing:1px;margin:8px 0 6px;">── 淨土宗 ──</div>
       <span class="corpus-chip" data-corpus="amitabha"     onclick="loadCorpus(this,'amitabha')">阿彌陀經·祖師語</span>
@@ -164,7 +167,7 @@ select option{background:#1a1710;}
       <span class="corpus-chip" data-corpus="zhongyong"  onclick="loadCorpus(this,'zhongyong')">中庸</span>
       <span class="corpus-chip" data-corpus="mengzi"     onclick="loadCorpus(this,'mengzi')">孟子</span>
       <div style="font-size:10px;color:var(--text3);letter-spacing:1px;margin:8px 0 6px;">── 全部一次建檔 ──</div>
-      <span class="corpus-chip" style="border-color:var(--gold);color:var(--gold2);" onclick="loadAllCorpus()">🚀 全部語料（21部）</span>
+      <span class="corpus-chip" style="border-color:var(--gold);color:var(--gold2);" onclick="loadAllCorpus()">🚀 全部語料（24部）</span>
     </div>
   </div>
 
@@ -826,6 +829,116 @@ const CORPUS = {
       "text": "諸佛如來是法界身，入一切眾生心想中。是故汝等心想佛時，是心即是三十二相、八十隨形好，是心作佛，是心是佛。",
       "translation": "諸佛如來以法界為身，進入一切眾生的心念之中。因此你們心裡想著佛的時候，這顆心就具備佛的相好；這顆心能成佛，這顆心就是佛。",
       "concept_essence": "佛不在遠處，就在當下的一念。心念所向，就是修行所在；這句話把淨土的他力信仰與自心清淨連在一起。"
+    }
+  ],
+  "yuanjue": [
+    {
+      "source": "圓覺經",
+      "chapter": "文殊菩薩章",
+      "tags": [
+        "幻化",
+        "覺知",
+        "放下"
+      ],
+      "tradition": "general",
+      "text": "一切眾生種種幻化，皆生如來圓覺妙心。",
+      "translation": "一切眾生所經歷的種種虛幻變化，其實都是從如來圓滿覺悟的妙心中生起的。",
+      "concept_essence": "把煩惱與境遇看作如幻的現象，而非實體。看見它們不是為了否定生活，而是不被它牽著走，因為能覺知的那顆心本身是清明的。"
+    },
+    {
+      "source": "圓覺經",
+      "chapter": "文殊菩薩章",
+      "tags": [
+        "知幻",
+        "離幻",
+        "覺"
+      ],
+      "tradition": "general",
+      "text": "知幻即離，不作方便；離幻即覺，亦無漸次。",
+      "translation": "認清那是幻象，就當下離開它，不必另外再做方便手段；離開幻象就是覺悟，也沒有一步一步的次第。",
+      "concept_essence": "覺察本身就是出口。當你清楚看見念頭、情緒只是起伏，不必先把它處理乾淨，覺察的那一刻已經鬆開了。"
+    },
+    {
+      "source": "圓覺經",
+      "chapter": "修行要語",
+      "tags": [
+        "妄念",
+        "覺照",
+        "不攀緣"
+      ],
+      "tradition": "general",
+      "text": "居一切時，不起妄念；於諸妄心，亦不息滅；住妄想境，不加了知；於無了知，不辨真實。",
+      "translation": "在任何時候，不生起虛妄的念頭；對已有的妄念，也不刻意去壓制消滅；處在妄想的境界裡，不再去分別了解；在沒有分別的狀態中，也不再去辨別真假。",
+      "concept_essence": "放鬆的修行：不壓抑念頭，也不追著念頭跑。對失眠、焦慮、反覆想事情的人特別有幫助，讓念頭自己來去，不與它角力。"
+    }
+  ],
+  "platform_more": [
+    {
+      "source": "六祖壇經",
+      "chapter": "行由品第一",
+      "tags": [
+        "自性",
+        "清淨",
+        "本具"
+      ],
+      "tradition": "general",
+      "text": "何期自性，本自清淨；何期自性，本不生滅；何期自性，本自具足；何期自性，本無動搖；何期自性，能生萬法。",
+      "translation": "沒想到自己的本性，本來就清淨；沒想到自性本來不生不滅；沒想到自性本來就圓滿具足；沒想到自性本來不動搖；沒想到自性能生出一切萬法。",
+      "concept_essence": "六祖開悟時的五句話：你要找的東西，本來就在自己身上，不假外求。可用來緩解「自己不夠好」的匱乏感。"
+    },
+    {
+      "source": "六祖壇經",
+      "chapter": "行由品第一",
+      "tags": [
+        "自度",
+        "覺悟",
+        "自力"
+      ],
+      "tradition": "general",
+      "text": "迷時師度，悟時自度。",
+      "translation": "迷惑的時候靠老師引導，覺悟之後，就是自己度自己。",
+      "concept_essence": "師父與經典是引路人，最終要自己走。別把答案全交給別人，包括這個 App。"
+    },
+    {
+      "source": "六祖壇經",
+      "chapter": "定慧品第四",
+      "tags": [
+        "一行三昧",
+        "直心",
+        "日常"
+      ],
+      "tradition": "general",
+      "text": "一行三昧者，於一切處，行住坐臥，常行一直心是也。",
+      "translation": "所謂一行三昧，就是在任何地方、行走、站立、坐下、躺臥時，都保持一顆正直不彎曲的心。",
+      "concept_essence": "修行不必另設時間地點。在日常每個動作裡，保持誠實、不造作的心，就是修行。"
+    }
+  ],
+  "mahayana_more": [
+    {
+      "source": "大智度論",
+      "chapter": "卷二十七",
+      "tags": [
+        "慈",
+        "悲",
+        "利他"
+      ],
+      "tradition": "general",
+      "text": "大慈與一切眾生樂，大悲拔一切眾生苦。",
+      "translation": "大慈是給予一切眾生快樂，大悲是拔除一切眾生的痛苦。",
+      "concept_essence": "慈與悲的簡明定義。面對他人的難處時，可以先問自己：我能給對方什麼安樂？我能幫他減輕什麼苦？"
+    },
+    {
+      "source": "大般涅槃經",
+      "chapter": "師子吼菩薩品",
+      "tags": [
+        "佛性",
+        "平等",
+        "自信"
+      ],
+      "tradition": "general",
+      "text": "一切眾生，悉有佛性。",
+      "translation": "所有的眾生，都具有成佛的本性。",
+      "concept_essence": "每個人本具覺悟的潛能，不因出身、過錯而喪失。是自我否定的人很需要聽見的一句話。"
     }
   ],
   "vimalakirti": [
